@@ -83,13 +83,6 @@ class custom_disguising extends \FileRun\Files\Plugin
         session_write_close();
         @exec($cmd, $return_text, $return_code);
         if ($return_code != 0) {
-            if ($this->config['debug']) {
-                echo " * command: " . $cmd . "<br>";
-                echo " * returned code: " . $return_code . "<br>";
-                echo " * returned text: ";
-                print_r($return_text);
-                flush();
-            }
             return false;
         } else {
             return true;
